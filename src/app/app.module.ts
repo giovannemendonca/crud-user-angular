@@ -20,6 +20,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalViewUserComponent } from './pages/crud/modal-view-user/modal-view-user.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    CrudComponent
+    CrudComponent,
+    ModalViewUserComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatPaginator,
     MatTableModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

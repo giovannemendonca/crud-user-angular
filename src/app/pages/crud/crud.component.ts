@@ -4,6 +4,9 @@ import {User} from "../../interfaces/user";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatDialog} from "@angular/material/dialog";
+import {ModalViewUserComponent} from "./modal-view-user/modal-view-user.component";
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-crud',
@@ -12,14 +15,10 @@ import {MatTableDataSource} from "@angular/material/table";
 })
 export class CrudComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ["id", "name", "email", "role", "benefits", "action"]
-  dataSource: any
-  listUsers: User[] = [];
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor(private usersService: UsersService) {
+  constructor(
+    private usersService: UsersService,
+    public dialog: MatDialog
+  ) {
     this.dataSource = new MatTableDataSource()
   }
 
@@ -31,6 +30,15 @@ export class CrudComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
+
+
+  displayedColumns: string[] = ["id", "name", "email", "role", "benefits", "action"]
+  dataSource: any
+  listUsers: User[] = [];
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
 
   getListUsers() {
     this.usersService.getAllUsers().subscribe({
@@ -54,6 +62,16 @@ export class CrudComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openModalViewUser(user: User) {
+    this.dialog.open(ModalViewUserComponent, {
+      width: "700px",
+      height: "330px",
+      data: user
+    })
+
+
   }
 
 }
