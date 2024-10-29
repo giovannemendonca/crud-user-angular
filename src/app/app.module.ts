@@ -13,6 +13,14 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
 import { CrudComponent } from './pages/crud/crud.component';
+import {MatFormField} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatPaginator} from "@angular/material/paginator";
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +37,13 @@ import { CrudComponent } from './pages/crud/crud.component';
     FormsModule,
     MatIconModule,
     MatProgressSpinner,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatFormField,
+    MatInputModule,
+    MatPaginator,
+    MatTableModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
