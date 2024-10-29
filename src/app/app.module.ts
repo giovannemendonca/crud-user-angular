@@ -12,6 +12,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatProgressSpinner} from "@angular/material/progress-spinner";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../environments/environment";
+import { CrudComponent } from './pages/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {environment} from "../environments/environment";
     ButtonComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
