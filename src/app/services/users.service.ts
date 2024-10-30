@@ -25,13 +25,13 @@ export class UsersService {
   }
 
   update(userId: string, user: User) {
-    this.dataBaseStore.collection('user').doc(userId).update(user)
+    this.dataBaseStore.collection('users').doc(userId).update(user)
       .then(() => console.log('Usuário atualizado com sucesso!'))
       .catch(error => console.error('Erro ao atualizar usuário:', error));
   }
 
   deleteUser(userId: string) {
-    this.dataBaseStore.collection('user').doc(userId).delete()
+    this.dataBaseStore.collection('users').doc(userId).delete()
       .then(() => console.log('Usuário deletado com sucesso!'))
       .catch(error => console.error('Erro ao deletar usuário:', error));
   }

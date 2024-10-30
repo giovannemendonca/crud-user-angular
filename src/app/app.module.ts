@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ButtonComponent} from './components/button/button.component';
 import {LoginComponent} from './pages/login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeComponent} from './pages/home/home.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {MatIconModule} from "@angular/material/icon";
@@ -22,6 +22,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalViewUserComponent } from './pages/crud/modal-view-user/modal-view-user.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     HomeComponent,
     MenuComponent,
     CrudComponent,
-    ModalViewUserComponent
+    ModalViewUserComponent,
+    ModalFormUserComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatTableModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
